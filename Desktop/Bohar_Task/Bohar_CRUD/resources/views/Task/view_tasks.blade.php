@@ -9,9 +9,22 @@
               <div class="card-body">
                 <h5 class="card-title">{{ $task->title }}</h5>
                 <p class="card-text">{{ $task->description }}</p>
+
+                @if($task->status=="completed"){
+                    <span class="badge badge-success">{{ $task->status}}</span>
+                }
+                @elseif($task->status=='in_progress'){
+                    <span class="badge badge-warning">{{ $task->status}}</span>
+
+                }
+                @elseif($task->status=='pending'){
+                    <span class="badge badge-danger">{{ $task->status}}</span>
+
+                }
+                @endif
               </div>
             </div>
         </div>
-        
+
     </div>
 @endsection

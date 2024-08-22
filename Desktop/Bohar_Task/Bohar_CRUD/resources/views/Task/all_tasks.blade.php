@@ -30,6 +30,7 @@
                     <th scope="col">id</th>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
+                    <th scope="col">status</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -39,6 +40,7 @@
                         <th scope="row">{{$key+1}}</th>
                         <td>{{ $task->title }}</td>
                         <td>{{ $task->description }}</td>
+                        <td>{{ $task->status }}</td>
                         <td>
                             <div>
                             <a href="{{ route('view', $task->id) }}" class="btn btn-primary btn-md">View</a>

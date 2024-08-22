@@ -35,7 +35,15 @@
                         <input type="text" class="form-control" id="description" name="description"
                             value="{{ $task->description }}" required>
                     </div>
-
+                    <div class="form-group mt-3">
+                        <label for="status">Status</label>
+                        <select class="form-control-dropdown" id="status" name="status">
+                            <option value="" disabled selected>status</option>
+                            <option value="pending">Pending</option>
+                            <option value="in_progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
 
                     <button type="submit" class="btn btn-primary mt-3">Update</button>
                 </form>

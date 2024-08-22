@@ -38,13 +38,16 @@ class TaskController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string|min:10',
-        ]);
+            'status'=>'required'
+            ]);
 
 
         $task = new Task;
         $task->user_id = $id;
         $task->title = $request->input('title');
         $task->description = $request->input('description');
+        $task->status = $request->input('status');
+
         if ($task->save()) {
             event(new popupMessage($task->id, 'created successfully'));
             return back();
@@ -81,6 +84,7 @@ class TaskController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string|min:10',
+            'status'=>'required'
         ]);
 
         $update = $task->update($request->all());
